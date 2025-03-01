@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import { format } from 'date-fns';
-import { Select, MenuItem, TextField, Typography, Container, Box } from '@mui/material';
+import { Select, MenuItem, TextField, Typography, Container, Box, Stack, Button } from '@mui/material';
 import FoodSearch from './FoodSearch';
 import LogTable from './LogTable';
 import SummaryMetrics from './SummaryMetrics';
 import PheGoal from './PheGoal';
-
 
 const App = () => {
   const [foods, setFoods] = useState([]);
   const [logs, setLogs] = useState({});
   const [selectedDaughter, setSelectedDaughter] = useState('Scarlett');
   const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg
+  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg (updated per previous request)
 
   useEffect(() => {
     document.title = 'PKU Tracker | Gamify Data';
@@ -41,7 +40,7 @@ const App = () => {
   // Load logs and pheGoal from local storage
   useEffect(() => {
     const savedLogs = JSON.parse(localStorage.getItem('logs')) || {};
-    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100;
+    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100; // Updated default from 1000 to 100
     setLogs(savedLogs);
     setPheGoal(savedPheGoal);
   }, []);
@@ -52,7 +51,6 @@ const App = () => {
     localStorage.setItem('pheGoal', JSON.stringify(pheGoal));
   }, [logs, pheGoal]);
 
-  // Add a log entry
   const addLogEntry = (food, quantity) => {
     const phe_mg = food.phe_mg ? food.phe_mg : food.protein_g * 50; // Default Phe = protein * 50 mg/g
     const logEntry = {
@@ -77,11 +75,45 @@ const App = () => {
 
   const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
 
+  const downloadLog = () => {
+    const csvData = currentLogs.map(log => {
+      const food = foods.find(f => f.id === log.food_id);
+      return {
+        food_name: food.food_name,
+        serving_size: food.serving_size,
+        quantity_servings: log.quantity_servings,
+        protein_g: log.protein_g,
+        phe_mg: log.phe_mg,
+        calories_kcal: log.calories_kcal != null ? log.calories_kcal : '-',
+      };
+    });
+
+    const csv = Papa.unparse(csvData);
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'daily_log.csv';
+    link.click();
+  };
+
+  const handleDeleteLog = (log) => {
+    setLogs(prevLogs => {
+      if (!prevLogs[selectedDaughter]?.[selectedDate]) return prevLogs; // Guard against undefined
+      const daughterLogs = { ...prevLogs[selectedDaughter] };
+      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter(item => item !== log);
+      return {
+        ...prevLogs,
+        [selectedDaughter]: daughterLogs,
+      };
+    });
+  };
+
   return (
     <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
-      {/* Logo in top left corner with link to gamifydata.com */}
+      {/* Logo in top left corner, redirecting to gamifydata.com on current page */}
       <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
-        <a href="https://gamifydata.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://gamifydata.com" rel="noopener noreferrer">
           <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
         </a>
       </Box>
@@ -106,12 +138,19 @@ const App = () => {
       </div>
       <FoodSearch foods={foods} setFoods={setFoods} addLogEntry={addLogEntry} />
       <SummaryMetrics logs={currentLogs} />
-      <LogTable logs={currentLogs} foods={foods} />
-      <PheGoal
-        pheGoal={pheGoal}
-        setPheGoal={setPheGoal}
-        totalPhe={currentLogs.reduce((sum, entry) => sum + entry.phe_mg, 0)}
-      />
+      <LogTable logs={currentLogs} foods={foods} onDeleteLog={handleDeleteLog} />
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: '20px', paddingRight: '10px' }}>
+        <PheGoal
+          pheGoal={pheGoal}
+          setPheGoal={setPheGoal}
+          totalPhe={currentLogs.reduce((sum, entry) => sum + entry.phe_mg, 0)}
+        />
+        <Box>
+          <Button variant="outlined" onClick={downloadLog}>
+            Download CSV
+          </Button>
+        </Box>
+      </Stack>
     </Container>
   );
 };

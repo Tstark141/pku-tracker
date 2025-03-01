@@ -1,35 +1,11 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableHead, TableRow, Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableHead, TableRow, IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Papa from 'papaparse';
 
-const LogTable = ({ logs, foods }) => {
-    const downloadLog = () => {
-      const csvData = logs.map(log => {
-        const food = foods.find(f => f.id === log.food_id);
-        return {
-          food_name: food.food_name,
-          serving_size: food.serving_size,
-          quantity_servings: log.quantity_servings,
-          protein_g: log.protein_g,
-          phe_mg: log.phe_mg,
-          calories_kcal: log.calories_kcal != null ? log.calories_kcal : '-',
-        };
-      });
-  
-      const csv = Papa.unparse(csvData);
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'daily_log.csv';
-      a.click();
-    };
-
+const LogTable = ({ logs, foods, onDeleteLog }) => {
   return (
     <div>
-      <Button variant="outlined" onClick={downloadLog} style={{ marginBottom: '10px' }}>
-        Download CSV
-      </Button>
       <Table>
         <TableHead>
           <TableRow>
@@ -39,6 +15,7 @@ const LogTable = ({ logs, foods }) => {
             <TableCell>Protein (g)</TableCell>
             <TableCell>Phe (mg)</TableCell>
             <TableCell>Calories (kcal)</TableCell>
+            <TableCell>Action</TableCell> {/* New column for delete button */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -52,6 +29,11 @@ const LogTable = ({ logs, foods }) => {
                 <TableCell>{log.protein_g.toFixed(1)}</TableCell>
                 <TableCell>{log.phe_mg.toFixed(0)}</TableCell>
                 <TableCell>{log.calories_kcal ? log.calories_kcal.toFixed(0) : '-'}</TableCell>
+                <TableCell>
+                  <IconButton onClick={() => onDeleteLog(log)} aria-label="delete">
+                    <DeleteIcon />
+                  </IconButton>
+                </TableCell>
               </TableRow>
             );
           })}
