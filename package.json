@@ -2,6 +2,7 @@
   "name": "pku-tracker",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -11,7 +12,9 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "express": "^4.21.2",
     "os-browserify": "^0.3.0",
     "papaparse": "^5.5.2",
     "react": "^19.0.0",
@@ -21,7 +24,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start:frontend": "react-app-rewired start",
+    "start:backend": "node backend/server.js",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
@@ -45,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.2", 
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1"
   }
