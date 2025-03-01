@@ -118,7 +118,7 @@ const App = () => {
         </a>
       </Box>
       {/* Centered title, with padding to avoid overlapping with logo */}
-      <Box sx={{ textAlign: 'center', marginBottom: '20px', paddingLeft: '120px' }}>
+      <Box sx={{ textAlign: 'center', marginBottom: '120px', paddingLeft: '120px' }}>
         <Typography variant="h4">PKU Tracker</Typography>
       </Box>
       <div style={{ marginBottom: '20px' }}>
@@ -139,7 +139,7 @@ const App = () => {
       <FoodSearch foods={foods} setFoods={setFoods} addLogEntry={addLogEntry} />
       <SummaryMetrics logs={currentLogs} />
       <LogTable logs={currentLogs} foods={foods} onDeleteLog={handleDeleteLog} />
-      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: '20px', paddingRight: '10px' }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: '60px', paddingRight: '10px' }}>
         <PheGoal
           pheGoal={pheGoal}
           setPheGoal={setPheGoal}
