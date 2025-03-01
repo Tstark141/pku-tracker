@@ -1,0 +1,356 @@
+﻿id,brand,food_name,serving_size,weight_g,phe_mg,mg/g,protein_g,Exch,calories_kcal
+1,Abbott,"Phenex-1, dry, unpacked",12.5 TBSP,100,0,0,0,0,480
+2,Abbott,"Phenex-2, Unflavored or Vanilla, dry, unpacked",12.5 TBSP,100,0,0,0,0,410
+3,Baby Gourmet,Banana Fig Oatmeal & Greek Yogurt,1 Pouch,128,130,1.02,3,8.7,110
+4,Baby Gourmet,Fruity Greens Mushies,1/4 Cup,7,11,1.63,0.3,0.8,30
+5,Baby Gourmet,"Harvest Pear, Pumpkin & Bana",1 Pouch,128,29,0.23,0.8,1.9,80
+6,Baby Gourmet,Juicy Pear & Garden Greens,1 Pouch,128,31,0.24,0.8,2.1,80
+7,Baby Gourmet,"Orchard Apple, Carrot & Prune",1 Pouch,128,17,0.13,0.6,1.1,70
+8,Baby Gourmet,"Pear, Pumpkin & Prune",1 Pouch,128,66,0.52,2,4.4,80
+9,Baby Gourmet,Ripe Mango & Avocado with Oats,1 Pouch,128,45,0.35,1,3,100
+10,Baby Gourmet,"Summer Cherry, Banana & Spinach",1 Pouch,128,63,0.49,2,4.2,140
+11,Baby Gourmet,Vanilla Banana Berry Risotto,1 Pouch,128,78,0.61,2,5.2,120
+12,Baby Gourmet,"Wildberry, Rhubarb, Kale & Quinoa",1 Pouch,128,71,0.56,2,4.7,120
+13,Beechnut,"Apple & Blackberry, Naturals Just, Stage 2",120 g,120,16,0.13,0.5,1,70
+14,Beechnut,"Apple & Kale, Naturals Just, Stage 2",120 g,120,18,0.15,0.6,1.2,60
+15,Beechnut,"Apple & Pumpkin, Naturals, Stage 2",120 g,120,16,0.13,0.5,1,70
+16,Beechnut,"Apple Cinnamon & Granola, Stage 2, Organic",1/4 Cup,60,10,0.17,0.3,0.7,35
+17,Beechnut,"Apple Kiwi & Spinach, Just, Stage 2, Organic",60 g,60,10,0.17,0.3,0.7,30
+18,Beechnut,"Apple Mango & Carrot Puree, Fruities on the Go",1 pouch,113,15,0.13,0.5,1,70
+19,Beechnut,"Apple Peach & Strawberry Puree, Fruities on the Go",1 pouch,113,11,0.1,0.4,0.7,60
+20,Beechnut,"Apple Raspberry & Avocado, Just, Stage 2, Organic",60 g,60,10,0.17,0.3,0.7,30
+21,Beechnut,"Apple Sweet Potato & Pineapple Puree, Fruities on the Go",1 pouch,113,24,0.21,0.6,1.6,80
+22,Beechnut,"Banana Apple & Strawberry Puree, Fruities on the Go",1 Pouch,113,27,0.24,0.7,1.8,80
+23,Beechnut,"Banana Blueberry & Green Beans, Naturals, Stage 2",1/4 Cup,60,13,0.22,0.3,0.9,45
+24,Beechnut,"Banana Cinnamon & Granola, Stage 2, Organic",60 g,60,30,0.5,0.7,2,45
+25,Beechnut,"Banana Mango & Sweet Potato, Stage 2, Organic",60 g,60,30,0.5,0.7,2,50
+26,Beechnut,"Banana Orange Pineapple, Naturals, Stage 2",1/4 Cup,60,11,0.18,0.3,0.7,45
+27,Beechnut,"Banana Pear & Sweet Potato Puree, Fruities on the Go",1 Pouch,113,46,0.41,1,3.1,90
+28,Beechnut,"Bananas, Stage 1",120 g,120,38,0.32,1.3,2.6,120
+29,Beechnut,"Beets Pear Pomegranate, Naturals, Stage 2",1/4 cup,60,10,0.17,0.4,0.7,35
+30,Beechnut,"Butternut Squash & Sweet Corn, Just , Stage 2, Organic",60 g,60,50,0.83,1.3,3.3,40
+31,Beechnut,"Butternut Squash, Naturals Just, Stage 1",1/4 Cup,60,23,0.38,0.4,1.5,25
+32,Beechnut,"Carrot Corn & Pumpkin, Naturals Just, Stage 2",120 g,120,48,0.4,1.2,3.2,60
+33,Beechnut,"Carrot Zucchini & Pear Blend, Veggies on the Go",1 pouch,113,23,0.2,0.6,1.5,50
+34,Beechnut,"Oatmeal, Whole Grain Cereal, Stage 1",1/4 cup,15,102,6.8,2,6.8,60
+35,Beechnut,"Pear & Blueberry, Naturals Just, Stage 2",1/4 cup,60,4,0.007,0.1,0.3,35
+36,Beechnut,"Pear Kale & Cucumber, Stage 2, Organic",60 g,60,20,0.33,0.5,1.3,35
+37,Beechnut,"Peas, Sweet, Stage 2",4 oz,113,116,1.03,4.4,7.7,60
+38,Beechnut,"Pumpkin Zucchini & Apple Blend, Veggies on the Go",1 pouch ,99,23,0.23,0.9,1.5,50
+39,Beechnut,"Rice Cereal Single Grain, Stage 1",1/4 cup,15,59,3.93,1.2,3.9,50
+40,Beechnut,"Spinach Zucchini & Peas, Naturals Just, Stage 2",120 g,120,101,0.84,2.5,6.7,40
+41,Beechnut,"Squash Peas & Pear Blend, Veggies on the Go",1 pouch,99,65,0.66,1.8,4.3,50
+42,Beechnut,"Sweet Corn & Green Beans, Naturals Just, Stage 2",120 g,120,94,0.78,2.3,6.2,70
+43,Beechnut,"Sweet Potatoes, Stage 1",1 /4 cup,60,31,0.52,0.5,2.1,60
+44,Beechnut,"Zucchini Spinach & Banana Blend, Veggies on the Go",1 pouch ,99,37,0.37,1.1,2.5,45
+45,Buddy Fruits,Apple Banana,1 pouch,90,20,0.23,0.6,1.4,60
+46,Buddy Fruits,Apple Banana Passion Mango,1 pouch,90,20,0.22,0.6,1.3,50
+47,Buddy Fruits,Apple Blueberry,1 pouch,90,17,0.19,0.6,1.1,50
+48,Buddy Fruits,Apple Carrot Orange,1 pouch,90,15,0.17,0.6,1,50
+49,Buddy Fruits,Apple Cinnamon,1 pouch,90,15,0.17,0.6,1,60
+50,Buddy Fruits,Apple Multi-fruit,1 pouch,90,19,0.21,0.6,1.3,60
+51,Buddy Fruits,Apple Pear Spinach,1 pouch,90,57,0.63,1.8,3.8,45
+52,Buddy Fruits,Apple Strawberry,1 pouch,90,16,0.18,0.6,1.1,60
+53,Buddy Fruits,Apple Sweet Potato Blueberry,1 pouch,90,68,0.76,1.8,4.5,60
+54,Buddy Fruits,Orchard Blend,1 pouch,90,14,0.16,0.6,0.9,45
+55,Cambrooke,"Glytactin BetterMilk 15, Orange or Strawberry Crème",1.8 oz,52,23,0.44,0.5,1.5,160
+56,Ella's Kitchen,Apples & Straberries,4 oz,120,16,0.13,0.6,1,54
+57,Ella's Kitchen,Apples Carrots & Parsnips,4 oz,120,24,0.2,1,1.6,54
+58,Ella's Kitchen,Apples Carrots Prunes & Butternut Squash,4 oz,120,24,0.2,0.8,1.6,70
+59,Ella's Kitchen,Apples Sweet Potatoes Pumpkin & Blueberries,4 oz,120,36,0.3,1,2.4,63
+60,Ella's Kitchen,Bananas & Apples,4 oz,120,29,0.24,0.8,1.9,91
+61,Ella's Kitchen,Peaches & Bananas,4 oz,120,36,0.3,1.1,2.4,75
+62,Ella's Kitchen,Pears Mangoes & Papayas,1 pouch,99,14,0.14,0.5,0.9,60
+63,Ella's Kitchen,Pears Peas & Broccoli,4 oz,120,105,0.88,3,7,68
+64,Ella's Kitchen,"Smoothie Fruit, The Purple One",3 oz,90,24,0.27,0.7,1.6,65
+65,Ella's Kitchen,"Smoothie Fruit, The Red One",3 oz,90,17,0.19,0.5,1.2,52
+66,Gerber,"Animal Crackers, Cinnamon Graham",7 g,7,20,2.8,0.4,1.3,30
+67,Gerber,"Apple Avocado, 2nd Foods",4 oz ,113,13,0.12,0.4,0.9,60
+68,Gerber,"Apple Banana with Mixed Cereal, 2nd Foods",4 oz,113,57,0.5,1.1,3.8,90
+69,Gerber,"Apple Berry Mixed Cereal, 2nd Foods",113 g,113,45,0.4,0.9,3,76
+70,Gerber,"Apple Blueberry, 2nd Foods",4 oz,113,8,0.07,0.3,0.5,60
+71,Gerber,"Apple Harvest, Wagon Wheels",7 g,7,24,3.4,0.5,1.6,25
+72,Gerber,"Apple Peach Squash, 2nd Foods",113 g,113,34,0.3,0.5,2.3,60
+73,Gerber,"Apple Prune, 2nd Foods, Organic",1 jar,113,18,0.16,0.5,1.2,60
+74,Gerber,"Apple Straberry Banana, 2nd Foods",4 oz,113,12,0.11,0.4,0.8,60
+75,Gerber,"Apple Sweet Potato, Lil' Crunchies",16 Pieces,7,18,2.57,0.4,1.2,35
+76,Gerber,"Apple Zucchini Guava & Kale with Peas, Homestyle Purees",4 oz,120,27,0.23,1.1,1.8,50
+77,Gerber,"Apple Zucchini Spinach Strawberries, 2nd Foods, Organic",1 pouch,99,20,0.2,0.5,1.3,45
+78,Gerber,"Apple, 1st Foods",1 Pack,71,7,0.1,0.2,0.5,45
+79,Gerber,"Apple, 2nd Foods",113 g,113,11,0.1,0.3,0.7,60
+80,Gerber,"Apples & Cherries, 2nd Foods",4 oz,113,11,0.1,0.3,0.8,70
+81,Gerber,"Apples Carrots & Squash, 2nd Foods, Organic",1 pouch ,99,22,0.22,0.5,1.4,50
+82,Gerber,"Apricot with Mixed Freuit, 2nd Foods",3.5 oz,99,26,0.26,0.7,1.7,60
+83,Gerber,"Banana Apple Pear, 2nd Foods",3.5 oz,99,40,0.4,0.9,2.6,80
+84,Gerber," Banana Blackberry Blueberry, 2nd Foods",4 oz,113,64,0.57,1.3,4.3,100
+85,Gerber,"Banana Blueberry Blackberry Oatmeal, 2nd Foods, Organic",1 pouch,99,69,0.7,1.4,4.6,77
+86,Gerber,Banana Blueberry Grabbers,1 pouch,120,48,0.4,1.2,3.2,100
+87,Gerber,"Banana Carrot Mango, 2nd Foods",113 g,113,57,0.5,0.9,3.8,70
+88,Gerber,"Banana Cream, Teether Wheels",4 pieces,7,23,3.29,0.5,1.5,25
+89,Gerber,"Banana Mango, 2nd Foods, Organic",1 pouch ,99,50,0.51,1.1,3.3,90
+90,Gerber,"Banana Orange Medley, 2nd Foods",3.5 oz,99,39,0.39,1,2.6,90
+91,Gerber,"Banana Plum Grape, 2nd Foods",3.5 oz ,99,43,0.43,1,2.8,100
+92,Gerber,"Banana Squash, 2nd Foods, Organic",1 pouch,99,50,0.5,0.9,3.3,80
+93,Gerber,"Banana, 1st Foods",1 pack,71,35,0.49,0.8,2.3,60
+94,Gerber,"Banana, 2nd Foods",4 oz,113,55,0.49,1.2,3.7,90
+95,Gerber,"Beet, Parsnip and Yellow Carrot, Ready to Blend",1 pouch (4 oz),113,14,0.12,1,0.9,120
+96,Gerber,Butternut Squash Apple & Mango with Coriander,4 oz,120,5,0.04,1.1,0.3,70
+97,Gerber,"Butternut Squash, 1st Foods",1 pack,71,38,0.54,0.9,2.5,25
+98,Gerber,"Butternut Squash, 2nd Foods",113 g,113,57,0.5,0.8,3.8,40
+99,Gerber,"Carrot Sweet Potato Pea, 2nd Foods",4 oz,113,80,0.71,1.3,5.3,50
+100,Gerber,"Carrots, 1st Foods",1 pack,71,13,0.18,0.4,0.9,30
+101,Gerber,"Carrots, 2nd Foods",3.5 oz,99,18,0.18,0.5,1.2,40
+102,Gerber,"Cereal, Oatmeal",1/4 cup,15,128,8.53,2.4,8.5,60
+103,Gerber,"Cereal, Oatmeal, DHA & Probiotic",1/4 cup,15,113,7.53,2.3,7.5,60
+104,Gerber,"Cereal, Oatmeal, Organic",1/4 cup,15,132,8.8,2,8.8,60
+105,Gerber,"Cereal, Rice",1/4 cup,15,59,3.93,1.2,3.9,60
+106,Gerber,"Cereal, Whole Wheat",1/4 cup,15,84,5.6,1.7,5.6,60
+107,Gerber,"Cereal, Whole Wheat Apple Blueberry, Lil' Bits",15 g,15,72,4.8,1.5,4.8,60
+108,Gerber,"Cookiews, Arrowroot",1 cookie,5,17,3.4,0.3,1.1,20
+109,Gerber,"Cookies, Banana",1 cookie,8,20,2.5,0.7,1.3,20
+110,Gerber,"Date and Carrot Fruit & Veggie Bar, Organic",1 bar,24,46,1.9,1.1,3,80
+111,Gerber,"Fruit & Veggie Melts, Truly Tropical Blend",32 pieces,7,19,2.714,0.5,1.3,25
+112,Gerber,"Gardon Tomato, Graduates Lil' Crunchies",16 pieces,7,20,2.86,0.4,1.3,35
+113,Gerber,"Grain Bar, Strawberry",1 bar,19,20,1.05,1,1.3,70
+114,Gerber,"Grain Bar, Strawberry Banana",19 g,19,34,1.8,0.7,2.3,70
+115,Gerber,"Green Beans, 1st Foods",1 pack,71,49,0.69,1.3,3.3,25
+116,Gerber,"Green Beans, 2nd Foods",4 oz,113,79,0.7,2.2,5.3,40
+117,Gerber,"Lil Mixers, Apple Blueberry & Puffs",3.6 oz,102,21,0.21,0.5,1.4,70
+118,Gerber,"Lil Mixers, Apple Strawberry Banana & Puffs",3.6 oz,102,25,0.25,0.6,1.7,70
+119,Gerber,"Lil Crunchies, Mild Cheddar",16 Pieces,7,27,3.86,0.5,1.8,35
+120,Gerber,"Lil Crunchies, Ranch",16 Pieces,7,20,2.86,0.4,1.3,35
+121,Gerber,"Parsnip, Yellow Carrot and Orange Carrot, Ready to Blend",1 pouch (4 oz),113,14,0.12,1,0.9,110
+122,Gerber,"Pea Mango Corn, Ready to Blend",1 pouch (4 oz),113,128,1.13,3.4,8.5,180
+123,Gerber,"Peaches, 1st Foods",1 pack,71,13,0.18,0.4,0.9,50
+124,Gerber,"Peaches, 2nd Foods",3.5 oz,99,21,0.21,1.5,1.4,70
+125,Gerber,"Pear Parsnip with Vanilla, Homestyle Purees",4 oz,120,10,0.08,0.7,0.7,70
+126,Gerber,"Pear Peach Oatmeal, 2nd Foods, Organic",1 pouch,99,30,0.3,0.8,2,80
+127,Gerber,"Pear Peach Strawberry, 2nd Foods",1 pouch ,99,10,0.1,0.9,0.7,56
+128,Gerber,"Pear Pineapple, 2nd Foods",3.5 oz,99,13,0.13,0.4,0.9,60
+129,Gerber,"Pear Spinach, 2nd Foods, Organic",1 pouch,99,30,0.3,0.5,2,60
+130,Gerber,"Pear Zucchini Corn, 2nd Foods",113 g,113,23,0.2,0.8,1.5,70
+131,Gerber,"Pears Cinnamon w/ Oatmeal, 2nd Foods",4 oz,113,57,0.5,1.4,3.8,80
+132,Gerber,"Pears, 1st Foods",1 pack,71,9,0.13,0.3,0.6,50
+133,Gerber,"Pears, 2nd Foods",3.5 oz,99,12,0.12,0.4,0.8,70
+134,Gerber,"Peas, 1st Foods",2.5 oz,71,99,1.4,1.8,6.6,50
+135,Gerber,"Peas, 2nd Foods",4 oz,113,158,1.4,2.9,10.5,50
+136,Gerber,"Prunes with Apples, 2nd Foods",3.5 oz,99,32,0.32,0.7,2.1,70
+137,Gerber,"Prunes, 1st Foods",1 pack,71,41,0.58,1.3,2.7,60
+138,Gerber,"Puffs, Apple Cinnamon",1/2 Cup,7,25,3.57,0.5,1.7,25
+139,Gerber,"Puffs, Apple, Organic",1/2 Cup,7,14,2,0.4,0.9,25
+140,Gerber,"Puffs, Banana, Blueberry or Vanilla",1/2 Cup,7,24,3.43,0.5,1.6,25
+141,Gerber,"Puffs, Peach, Strawberry Apple, or Sweet Potato",1/2 Cup,7,25,3.57,0.5,1.7,25
+142,Gerber,"Pumpkin Banana Carrot, 2nd Foods, Organic",1 pouch,99,59,0.6,1.5,4,60
+143,Gerber,"Squash Apple Corn, 2nd Foods",113 g,113,57,0.5,1.4,3.8,60
+144,Gerber,"Strawberry Banana Squeezable Fruit w/ Yogurt, Graduate Grabbers",1 pouch,120,84,0.7,1.6,5.6,100
+145,Gerber,"Strawberry Banana, Lil' Bits Oatmeal Cereal",1/4 cup,15,90,6,1.7,6,60
+146,Gerber,"Sweet Potato Apple Pumpkin, 2nd Foods",113 g,113,45,0.4,1,3,60
+147,Gerber,"Sweet Potato Carrot, Ready to Blend",1 pouch (4 oz),113,93,0.82,1.5,6.2,150
+148,Gerber,"Sweet Potato Corn, 2nd Foods",3.5 oz,99,79,0.8,1.6,5.3,70
+149,Gerber,"Sweet Potatoes, 1st Foods",1 pack,71,49,0.69,1.2,3.3,50
+150,Gerber,"Sweet Potatoes, 2nd Foods",3.5 oz,99,69,0.7,1.2,4.6,70
+151,Gerber,"Teethers, Banana Peach",4 wafers,8,22,2.75,0.4,1.5,30
+152,Gerber,"Teethers, Straberry Apple Spinach",4 rusks,8,23,2.87,0.4,1.5,30
+153,Gerber,Vanilla Custard Pudding with Banana,3.5 oz,99,109,1.1,2.6,7.3,110
+154,Gerber,"Veggie Dip, Graduates Lil' Crunchies",16 pieces,7,20,2.86,0.4,1.3,35
+155,Gerber,"Very Berry Blend, Graduates Fruit & Veggie Melts",32 pieces,7,18,2.57,0.5,1.2,25
+156,Gerber,"Yogurt Melts, Banana Strawberry, Organic",7 g,7,60,8.6,1.4,4,30
+157,Gerber,"Yogurt Melts, Banana Vanilla",7 g,7,57,8.1,1.3,3.8,30
+158,Gerber,"Yogurt Melts, Mixed Berries",1/4 Cup,7,58,8.29,1.2,3.9,30
+159,Gerber,"Yogurt Melts, Peach",1/4 Cup,7,58,8.29,1.2,3.9,30
+160,Gerber,"Yogurt Melts, Strawberry",1/4 Cup,7,58,8.29,1.2,3.9,30
+161,GoGoSqueez,"AppleApple, Peach, Pear, Pineapple, Grape, or Pumpkin",90 g,90,9,0.1,0.3,0.6,60
+162,GoGoSqueez,AppleBanana,90 g,90,20,0.22,0.4,1.3,60
+163,GoGoSqueez,AppleCinnamon,90 g,90,8,0.09,0.3,0.5,50
+164,GoGoSqueez,Fruit and VeggieZ Boulder Berry Apple,90 g,90,18,0.2,0.5,1.2,60
+165,GoGoSqueez,Fruit and VeggieZ Greatful Grape,90 g,90,18,0.2,0.5,1.2,60
+166,GoGoSqueez,Fruit and VeggieZ Pedal Pedal Peach,90 g,90,27,0.3,0.7,1.8,60
+167,GoGoSqueez,Fruit and VeggieZ Zippin Zingin Pear,90 g,90,15,0.17,0.5,1,70
+168,GoGoSqueez,"Gimme Five, APpleBerry, AppleCherry, AppleMango, AppleStrawberry",1 pouch,90,11,0.12,0.4,0.7,60
+169,Happy Baby,"Apple Beet Strawberry Kiwi, Happy Kid",1 pouch,90,5,0.05,0.2,0.3,60
+170,Happy Baby,"Apple Blueberry Pomegranate, Happy Kid",1 pouch,90,3,0.03,0.1,0.2,60
+171,Happy Baby,"Apple Kale & Bluebeery, Organic, Twist",1 pouch,90,7,0.08,0.2,0.5,60
+172,Happy Baby,"Apple Kale Blueberry, Happy Kid",1 pouch,90,7,0.08,0.2,0.5,60
+173,Happy Baby,"Apple Kale Mango, Happy Kid",1 pouch,90,7,0.08,0.2,0.5,60
+174,Happy Baby,"Apple, Blueberries & Oats, Stage 2, Clearly Crafted",4 oz,113,24,0.21,0.7,1.6,80
+175,Happy Baby,"Apple, Blueberry and Beet, Carrot, Rice Cakes",4 Cakes,6,23,3.8,0.4,1.5,20
+176,Happy Baby,"Apple, Mangos & Beets, Stage 2, Clearly Crafted",1 Jar,113,9,0.08,0.4,0.6,70
+177,Happy Baby,"Apple, Oats & Cinnamon, Stage 2, Clearly Crafted",1 Jar,113,20,0.18,0.6,1.3,70
+178,Happy Baby,"Apple, Spinach, Pea & Kiwi, Organic, Coconut Creamies",7 g,7,20,2.85,0.5,1.3,30
+179,Happy Baby,"Apple, Strawberry & Beet, Happy Squeeze",99 g,99,53,0.54,1,3.6,70
+180,Happy Baby,"Apple, Sweet Potatoes & Greanola, Stage 2, Clearly Crafted",1 Pouch,113,33,0.29,0.8,2.2,70
+181,Happy Baby,"Apples & Blueberries, Stage 2, Clearly Crafted",1 Jar,113,6,0.05,0.2,0.4,70
+182,Happy Baby,"Apples & Butternut Squash & Super Chia, Stage 4",1 Pouch,120,59,0.49,1,3.9,60
+183,Happy Baby,"Apples & Spinach, Stage 2, Clearly Crafted",1 Jar,113,14,0.12,0.4,0.9,70
+184,Happy Baby,"Apples Spinach Peas and Broccoli & Super Chia, Organic",1 Pouch,120,64,0.53,1.6,4.2,90
+185,Happy Baby,"Apples, Cinnamon, Yogurt & Oats & Super Chia, Stage 4",1 Pouch,113,62,0.55,1.4,4.1,90
+186,Happy Baby,"Apples, Guavas & Beets, Stage 2, Clearly Crafted",1 Pouch,113,11,0.1,0.6,0.8,80
+187,Happy Baby,"Apples, Kale & Avocado, Stage 2, Clearly Crafted",1 Pouch,113,30,0.27,0.7,2,80
+188,Happy Baby,"Apples, Pumpkin & Carrots, Stage 2, Clearly Crafted",1 Pouch,113,12,0.11,0.4,0.8,70
+189,Happy Baby,"Apples, Spinach & Kale, Stage 2, Simple Combos",4 oz,113,34,0.3,0.9,2.2,70
+190,Happy Baby,"Apples, Sweet Potato, Carrot & Cinnamon & Super Chia, Stage 4",1 Pouch,120,49,0.41,1,3.3,70
+191,Happy Baby,"Apricots, Sweet Potato & Bananas, Stage 2, Clearly Crafted",4 oz,113,64,0.56,1.3,4.2,70
+192,Happy Baby,"Banana & Sweet Potato, Teether",4 Wafers,8,26,3.23,0.5,1.7,30
+193,Happy Baby,"Banana, Beet & Blueberry, Stage 2, Simple Combos",113 g,113,52,0.46,0.6,3.5,90
+194,Happy Baby,"Banana, Beet, Squash & Blueberry, Stage 4",4.2 oz,120,46,0.38,1.3,3.1,80
+195,Happy Baby,"Bananas & Strawberries, Stage 2, Clearly Crafted",1 jar,113,36,0.32,1,2.4,100
+196,Happy Baby,"Bananas & Sweet Potatoes, Stage 2, Clearly Crafted",1 jar,113,55,0.49,1.1,3.7,90
+197,Happy Baby,"Bananas, Beets & Strawberries, Stage 4",4 oz,113,29,0.26,1,1.9,80
+198,Happy Baby,"Bananas, Blueberries, & Beets, Stage 2, Clearly Crafted",1 jar,113,33,0.29,1.1,2.2,90
+199,Happy Baby,"Bananas, Blueberries, Yogurt & Oats & Super Chia, Stage 4",1 pouch,113,91,0.81,1.9,6.1,90
+200,Happy Baby,"Bananas, Mangos & Spinach, Coconut Milk, Stage 4",1 pouch,113,54,0.48,1.3,3.6,100
+201,Happy Baby,"Bananas, Peaches & Mangos & Super Chia, Stage 4",1 pouch,120,79,0.66,2,5.3,90
+202,Happy Baby,"Bananas, Plums & Granola, Stage 2, Clearly Crafted",1 pouch,113,28,0.25,0.9,1.9,70
+203,Happy Baby,"Bananas, Raspberries & Oats, Stage 2, Clearly Crafted",4 oz,113,29,0.25,0.9,1.9,90
+204,Happy Baby,"Bananas, Sweet Potatoes & Papayas, Stage 2, Clearly Crafted",1 pouch,113,40,0.35,1,2.7,90
+205,Happy Baby,"Black Beans, Beets & Bananas, Stage 2, Clearly Crafted",1 pouch,113,111,0.98,2.9,7.4,90
+206,Happy Baby,"Blueberry & Purple Carrot, Teethers ",1 wafers,8,26,3.3,0.5,1.8,30
+207,Happy Baby,"Carrot, Banana, Mango & Sweet Potato, Stage 4",4.2 Oz,120,27,0.22,0.8,1.8,70
+208,Happy Baby,"Carrots & Peas, Stage 2, Clearly Crafted",1 Jar,113,20,0.18,0.6,1.3,45
+209,Happy Baby,"Carrots, Strawberries & Chickpeas, Stage 2, Clearly Crafted",1 Pouch,113,75,0.66,1.4,5,70
+210,Happy Baby,"Cereal, Multi-Grain, Organic Probiotic",4 TBSP,15,48,3.18,1.1,3.2,60
+211,Happy Baby,"Cereal, Oatmeal, Clearly Crafted",3 TBSP,14,97,6.93,1.8,6.5,50
+212,Happy Baby,"Cereal, Oats & Quinoa, Clearly Crafted",3 TBSP,14,89,6.36,1.9,5.9,50
+213,Happy Baby,Cheddar and Spinach Chickpea Straws,1 bag,7,95,13.57,1.5,6.3,30
+214,Happy Baby,"Cinnamon, Sweet Potato & Flaxseed Alphabet Snacks",3 cookies,8,31,3.88,0.4,2.1,35
+215,Happy Baby,"Green Beans, Spinach & Pears, Stage 2, Clearly Crafted",1 pouch,113,67,0.59,1.8,4.5,45
+216,Happy Baby,"Green Beans, Stage 1, Clearly Crafted",4 oz,113,56,0.5,1.5,3.7,35
+217,Happy Baby,"Happy Creamies, Strawberry Raspberry Carrot",7 g,7,19,2.71,0.5,1.3,35
+218,Happy Baby,"Harvest Vegetables & Chicken with Quinoa, Stage 3, Hearty Meals",1 pouch,113,166,1.47,3.8,11.1,80
+219,Happy Baby,"Pears & Kale, Stage 2, Clearly Crafted",1 jar,113,30,0.27,0.7,2,60
+220,Happy Baby,"Pears & Prunes, Stage 2, Clearly Crafted",1 jar,113,13,0.12,0.5,0.9,80
+221,Happy Baby,"Pears, Green Beans & Peas & Super Chia, Stage 4",1 pouch,120,59,0.49,1,3.9,70
+222,Happy Baby,"Pears, Kale & Spinach, Stage 2, Clearly Crafted",4 oz,113,47,0.41,1.1,3.1,60
+223,Happy Baby,"Pears, Mango & Spinach & Super Chia, Stage 4",4.2 oz,120,58,0.49,1.6,3.9,90
+224,Happy Baby,"Pears, Mangos & Spinach, Stage 2, Clearly Crafted",1 Jar,113,27,0.24,0.8,1.8,70
+225,Happy Baby,"Pears, Peas & Broccoli, Stage 2, Simple Combos",4 oz,113,22,0.2,0.6,1.5,70
+226,Happy Baby,"Pears, Peas & Green Beans",1 Pouch,120,48,0.4,1.4,3.2,80
+227,Happy Baby,"Pears, Pineapple & Avocado, Stage 2, Clearly Crafted",1 Jar,113,19,0.17,0.5,1.3,80
+228,Happy Baby,"Pears, Pumpkin & Passion Fruit, Stage 2, Clearly Crafted",1 Pouch,113,19,0.17,0.6,1.3,70
+229,Happy Baby,"Pears, Raspberries, Carrots & Butternut Squash, Stage 4, Happy tot Fiber & Protein",1 Pouch,113,86,0.76,3.1,5.7,80
+230,Happy Baby,"Pears, Squash & Blackberries, Stage 2, Clearly Crafted",1 Pouch,113,28,0.24,0.8,1.8,70
+231,Happy Baby,"Pears, Stage 1, Clearly Crafted",4 oz,113,13,0.11,0.5,0.9,70
+232,Happy Baby,"Pears, Zucchini & Peas, Stage 2, Clearly Crafted",1 pouch,113,36,0.32,1.1,2.4,60
+233,Happy Baby,"Peas, Pumpkin, Peaches & Granola, Stage 2, Clearly Crafted",1 Pouch,113,50,0.44,1.5,3.3,70
+234,Happy Baby,"Prunes, Stage 1, Clearly Crafted",4 oz,99,19,0.19,0.7,1.2,90
+235,Happy Baby,"Puffs, Apple & Broccoli",1/2 Cup,7,23,3.23,0.4,1.5,25
+236,Happy Baby,"Puffs, Banana & Mango",1/2 Cup,7,25,3.56,0.5,1.7,25
+237,Happy Baby,"Puffs, Kale & Spinach",1/2 Cup,7,25,3.63,0.5,1.7,25
+238,Happy Baby,"Puffs, Purple Carrot & Blueberry",1/2 Cup,7,24,3.47,0.5,1.6,25
+239,Happy Baby,"Puffs, Strawberry & Beet",1/2 Cup,7,25,3.56,0.5,1.7,25
+240,Happy Baby,"Puffs, Sweet Potato & Carrot",1/2 Cup,7,25,3.56,0.5,1.7,25
+241,Happy Baby,"Pumpkin, Apples, Peaches & Cinnamon, Stage 2, Simple Combos",113 g,113,34,0.3,0.6,2.3,70
+242,Happy Baby,"Purple Carrots, Bananas, Avocados & Quinoa, Stage 2, Clearly Crafted",1 pouch,113,78,0.69,1.5,5.2,90
+243,Happy Baby,"Root Vegetables & Turkey with Quinoa, Stage 3, Hearty Meals",1 pouch,113,136,1.2,3,9.1,80
+244,Happy Baby,"Spinach, Apple, Sweet Potato & Kiwi, Stage 4",1 pouch,120,75,0.63,1.8,5,70
+245,Happy Baby,Sweet Potato and Rosemary Chickpea Straws,1 bag,7,89,12.71,1.4,5.9,30
+246,Happy Baby,"Sweet Potatoes, Mangos & Carrots, Stage 2, Clearly Crafted",1 pouch,113,51,0.45,1.3,3.4,80
+247,Happy Baby,"Sweet Potatoes, Stage 1, Clearly Crafted",4 oz,113,62,0.54,1.1,4.1,70
+248,Happy Baby,"Teethers, Pea & Spinach",4 wafers,8,27,3.38,0.5,1.8,30
+249,Happy Baby,Vanilla Oat & Flaxseed Alphabet Snacks,3 cookies,8,31,3.88,0.4,2.1,35
+250,Happy Baby,"Vegetables & Beef Medley with Quinoa, Stage 3, Hearty Meals",1 pouch,113,125,1.11,2.8,8.3,60
+251,Happy Baby,"Yogis, Banana & Mango",22 pieces,7,53,7.54,1.1,3.5,30
+252,Happy Baby,"Yogis, Mixed Berry",22 pieces,7,53,7.54,1.1,3.5,30
+253,Happy Baby,"Yogis, Strawberry",22 pieces,7,53,7.61,1.1,3.6,30
+254,Happy Baby,"Zucchini, Apples, Peas, Quinoa & Basil, Stage 2, Clearly Crafted",1 pouch,113,77,0.68,2.2,5.1,70
+255,Happy Baby,"Zucchini, Pears, Chickpeas & Kale, Stage 4",1 pouch,120,83,0.7,1.9,5.6,60
+256,Hot Kid,Apple & Pumpkin Baby mum Mum Rice Rusks,4 rusks,8,24,2.99,0.4,1.6,30
+257,Hot Kid,"Apple Baby Mum Mum Rice Rusks, Organic",4 rusks,8,24,3,0.5,1.6,30
+258,Hot Kid,"Banana Baby Mum Mum Rice Rusks, Organic",4 rusks,8,25,3.13,0.4,1.7,30
+259,Hot Kid,"Blueberry & Goji Baby Mum Mum Rice Rusks, Organic",4 rusks,8,29,3.6,0.5,1.9,35
+260,Hot Kid,Original Baby Mum Mum Rice Rusks,4 rusks,8,27,3.31,0.5,1.8,30
+261,Hot Kid,"Straberry Toddler Mum Mums, Organic",4 biscuits,10,30,3,0.6,2,40
+262,Hot Kid,"Sweet Potato & Carrot Baby Mum Mum Rice Rusks, Organic",4 rusks,8,29,3.6,0.5,1.9,35
+263,Hot Kid,"Vegetable Baby Mum Mum Rice Rusks, Organic",4 rusks,8,25,3.13,0.4,1.7,30
+264,Love Child,Apple Banana Blueberry,1 pouch,128,28,0.22,0.7,1.9,90
+265,Love Child,Apple Banana Spinach Avocado,1 pouch,128,56,0.44,1.3,3.7,100
+266,Love Child,Apple Butternut Squash Cherry Ginger,1 pouch,128,38,0.3,1.1,2.5,70
+267,Love Child,Apple Corn Butternut Squash,1 pouch,128,41,0.32,1,2.7,90
+268,Love Child,"Apple Mango & Carrot Puree, Fruities on the Go",1 pouch,128,30,0.23,0.9,2,100
+269,Love Child,Apple Pumpkin Raisin Cinnamon Porridge,1 pouch,128,96,0.75,2.3,6.4,90
+270,Love Child,Apple Spinach Broccoli Kiwi,1 pouch,128,75,0.59,1.9,5,60
+271,Love Child,Apple Strawberry Beet Blueberry,1 pouch,128,25,0.2,0.6,1.7,70
+272,Love Child,Apple Sweet Potato Beet Cinnamon,1 pouch,128,50,0.39,1,3.3,80
+273,Love Child,Apple Sweet Potato Carrot Blueberry,1 pouch,128,40,0.31,0.9,2.7,80
+274,Love Child,"Apples, First",1 pouch,128,5,0.04,0.2,0.3,60
+275,Love Child,"Apples, Sweet Potatoes, Broccoli & Spinach",1 pouch,128,63,0.49,1.4,4.2,80
+276,Love Child,Banana Carrot Mango Coconut,1 pouch,128,67,0.52,1.6,4.5,120
+277,Love Child,Banana Pumpkin Pear Coconut,1 pouch,128,58,0.45,1.4,3.9,110
+278,Love Child,Banana Strawberry Peach,1 pouch,128,46,0.36,1.3,3.1,90
+279,Love Child,Hearty Bolognese,1 pouch,128,112,0.88,4,7.5,60
+280,Love Child,Mango Chicken Stew,1 pouch,128,151,1.18,3.8,10.1,80
+281,Love Child,Pear Banana Blackberry Raspberry Porridge,1 pouch,128,108,0.84,2.3,7.2,90
+282,Love Child,Pear Carrot Green Bean Prune,1 pouch,128,53,0.41,1.6,3.5,90
+283,Love Child,Pear Kale Pea,1 pouch,128,56,0.44,1.7,3.7,70
+284,Love Child,"Pears, First",1 pouch,128,24,0.19,0.9,1.6,80
+285,Love Child,"Prunes, First",1 pouch,128,28,0.22,1.1,1.9,110
+286,Love Child,Pumpkin Risotto,1 pouch,128,154,1.2,3.8,10.3,100
+287,Love Child,Ratatouille,1 pouch,128,178,1.39,4,11.9,80
+288,Love Child,Strawberry Rhubard Yorridge,1 pouch,128,64,0.5,1.8,4.3,80
+289,Love Child,Vegetarian Chili,1 pouch,128,205,1.6,3.7,13.7,90
+290,Love Child,Veggie Casserole,1 pouch,128,210,1.64,4.6,14,90
+291,Mead Johnson,"Mead Johnson Phenyl-Free 1, Dry, Unpacked",1 scoop,5,0,0,0,0,23
+292,Mead Johnson,"PhenylFree 1, Dry, Unpacked",1 scoop,5,0,0,0,0,23
+293,Milupa,"Cereal, LP-Fruity Apple Banana",50 g,50,35,0.7,0.9,2.3,222
+294,Milupa,"Cereal, LP-Fruity Pear",50 g,50,35,0.7,0.9,2.3,222
+295,Nosh!,Banana & Mango Teething Wafers,4 wafers,8,26,3.25,0.5,1.7,35
+296,Nosh!,Blueberry  Pomegranate Teething Wafers,4 wafers,8,26,3.25,0.5,1.7,35
+297,Nosh!,Kale Broccoli & Pear Teething Wafers,4 wafers,8,29,3.63,0.5,1.9,35
+298,Nosh!,Simply Rice Teething Wafers,4 wafers,8,27,3.38,0.5,1.8,35
+299,Nosh!,Strawberry & Beet Teething Wafers,4 wafers,8,26,3.25,0.5,1.7,35
+300,Nosh!,Sweet Potato & Pumpkin Teething Wafers,4 wafers,8,26,3.25,0.5,1.7,35
+301,Nutricia,"Periflex Advance, Unflavored, Dry",11.1 TBSP,100,0,0,0,0,385
+302,Nutricia,Periflex Early Years,1 scoop,5,0,0,0,0,24
+303,Nutricia,"Periflex Infant, Dry",1 scoop,5,0,0,0,0,21
+304,Nutricia,"Periflex Junior Plus, Plain, Vanilla, Orange, or Berry",100 g,100,0,0,0,0,385
+305,Nutricia,"Periflex Junior, Unflavored, Dry",1 TBSP,9,0,0,0,0,35
+306,Nutricia,PhenylAde Essential Drink Mix,1 scoop,40,0,0,0,0,156
+307,Nutricia,"Phenylade GMP Drink Mix, Original or Vanilla",1 pouch,33,15,0.46,0.3,1,132
+308,Once Upon A Farm,PKU Perfilex Early Years,1 scoop,5,0,0,0,0,24
+309,Once Upon A Farm,Apple Blueberry Applesauce,1 pouch,91,9,0.1,0.3,0.6,60
+310,Once Upon A Farm,"Appley Eating Greens, Smoothie",1 pouch,113,100,0.88,2.6,6.7,100
+311,Once Upon A Farm,"Baby Bear Butternut, Stage 1",1 pouch,91,23,0.25,0.6,1.5,50
+312,Once Upon A Farm,Beauty and the Beet,4 oz,113,127,1.12,3.2,8.5,110
+313,Once Upon A Farm,"Berry Berry, Quite Contrary, Smoothie",1 pouch,113,90,0.79,2.7,6,100
+314,Once Upon A Farm,Blueberry Bear,4 oz,113,33,0.29,0.8,2.2,70
+315,Once Upon A Farm,"Blueberry Rosemary Pear-fection, Smoothie",3.5 oz,99,94,0.94,2.5,6.2,110
+316,Once Upon A Farm,Carrot Lot,4 oz,113,18,0.16,0.7,1.2,3
+317,Once Upon A Farm,"Coco for Mangoes, Smoothie",4 oz,113,95,0.84,2.5,6.3,110
+318,Once Upon A Farm,"Gold-y Mango and the Three Coconuts, Stage 3",3.2 oz ,91,32,0.35,0.8,2.1,100
+319,Once Upon A Farm,"Green Kale & Apples, Stage 2",3.2 oz ,91,24,0.26,0.5,1.6,60
+320,Once Upon A Farm,"Just Right Oats, Stage 3",1 pouch,91,40,0.44,1,2.7,70
+321,Once Upon A Farm,"Magic Velvet Mango, Stage 1",1 pouch,91,23,0.25,0.7,1.5,50
+322,Once Upon A Farm,"Mama Bear Blueberry, Stage 2",3.2 oz ,91,16,0.17,0.4,1.1,60
+323,Once Upon A Farm,"OhMyMega Veggie, Stage 2",3.2 oz ,91,16,0.17,0.3,1,60
+324,Once Upon A Farm,"Peter Banana Pumpkin Eater, Smoothie",1 pouch,99,154,1.55,3.3,10.3,130
+325,Once Upon A Farm,Pineapple Of My Eye,4 oz,113,55,0.49,1.3,3.7,80
+326,Once Upon A Farm,Prince of Prunes,4 oz,113,16,0.14,0.6,1.1,70
+327,Once Upon A Farm,Rasp-pear-y Vanilla Fairy,1 pouch ,99,92,0.93,2.5,6.1,120
+328,Once Upon A Farm,So Sweet Potato,4 oz,113,62,0.55,1.1,4.1,60
+329,Once Upon A Farm,Squash Bucklin' Sage,4 oz,113,63,0.56,1.6,4.2,90
+330,Once Upon A Farm,"Straight from the Apple Tree, Applesauce",1 pouch,91,5,0.06,0.2,0.3,60
+331,Once Upon A Farm,Straw-pear-y Carrot,4 oz,113,25,0.22,0.6,1.7,60
+332,Once Upon A Farm,"Strawberry Banana Swirl, Smoothie",4 oz,113,112,0.99,2.5,7.5,100
+333,Once Upon A Farm,Strawberry Beet Basil,4 oz,113,72,0.64,1.7,4.8,100
+334,Once Upon A Farm,"Sun Shiny Strawberry Patch, Stage 3",3.2 oz ,91,49,0.54,1,3.2,80
+335,Once Upon A Farm,"The Fairest of Pears, Stage 1",1 pouch,91,8,0.09,0.3,0.5,60
+336,Once Upon A Farm,"Wild Rumpus Avocado, Stage 2",3.2 oz ,91,31,0.35,0.8,2.1,60
+337,Peter Rabbit,Apple & Grape,1 pouch,113,18,0.16,0.7,1.2.9,100
+338,Peter Rabbit,Apple & Peach,1 pouch,113,13,0.12,0.6,0.9,60
+339,Peter Rabbit,"Apple, Carrot & Squash",1 pouch,125,34,0.27,1.1,2.3,70
+340,Peter Rabbit,"Apple, Pea & Spinach",1 pouch,125,81,0.64,2.3,5.4,70
+341,Peter Rabbit,"Apple, Sweet Potato & Corn",1 pouch,125,63,0.5,1.5,4.2,70
+342,Peter Rabbit,"Pear, Carrot & Beet",1 pouch,125,33,0.26,1.1,2.2,50
+343,Peter Rabbit,Straberry & Banana,1 pouch,113,52,0.46,1.4,3.5,70
+344,Plum Organics,"Apple & Broccoli, Second Blends",1 pouch,113,25,0.22,0.8,1.7,50
+345,Plum Organics,"Apple & Carrot, Second Blends",1 pouch,113,10,0.09,0.4,0.7,50
+346,Plum Organics,"Banana & Pumpkin, Second Blends",1 pouch,113,48,0.42,1.2,3.2,80
+347,Plum Organics,"Peach, Banana & Apricot, Second Blends",1 pouch,113,33,0.29,1,2.2,70
+348,Plum Organics,"Pear & Mango, Second Blends",1 pouch,113,15,0.13,0.5,1,70
+349,Plum Organics,"Pear, Purple Carrot & Blueberry, Second Blends",1 pouch,113,18,0.16,0.6,1.2,60
+350,Plum Organics,"Pear, Spinach & Pea, Second Blends",1 pouch,113,59,0.52,1.6,4,70
+351,Plum Organics,"Sweet Potato, Apple & Corn, Second Blends",1 pouch,113,54,0.48,1.3,3.6,90
+352,Similac,Similac Advance,100 g,100,465,4.65,10.8,31,506
+353,Vitaflo,"PKU Gel, Orange, Dry",1 packet,24,0,0,0,0,76
+354,Vitaflo,"PKU Gel, Raspberry, Dry",1 packet,24,0,0,0,0,76
+355,Vitaflo,"PKU Gel, Unflavored, Dry",1 packet,24,0,0,0,0,81
