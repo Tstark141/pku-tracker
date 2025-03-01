@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import { format } from 'date-fns';
-import { Select, MenuItem, TextField, Typography, Container } from '@mui/material';
+import { Select, MenuItem, TextField, Typography, Container, Box } from '@mui/material';
 import FoodSearch from './FoodSearch';
 import LogTable from './LogTable';
 import SummaryMetrics from './SummaryMetrics';
 import PheGoal from './PheGoal';
+
 
 const App = () => {
   const [foods, setFoods] = useState([]);
   const [logs, setLogs] = useState({});
   const [selectedDaughter, setSelectedDaughter] = useState('Scarlett');
   const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [pheGoal, setPheGoal] = useState(1000); // Default 1000 mg
+  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg
+
+  useEffect(() => {
+    document.title = 'PKU Tracker | Gamify Data';
+  }, []); // Empty dependency array ensures it runs only once on mount
 
   // Load foods from CSV on mount
   useEffect(() => {
@@ -36,7 +41,7 @@ const App = () => {
   // Load logs and pheGoal from local storage
   useEffect(() => {
     const savedLogs = JSON.parse(localStorage.getItem('logs')) || {};
-    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 1000;
+    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100;
     setLogs(savedLogs);
     setPheGoal(savedPheGoal);
   }, []);
@@ -73,8 +78,17 @@ const App = () => {
   const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>PKU Diet Tracker</Typography>
+    <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
+      {/* Logo in top left corner with link to gamifydata.com */}
+      <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
+        <a href="https://gamifydata.com" target="_blank" rel="noopener noreferrer">
+          <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
+        </a>
+      </Box>
+      {/* Centered title, with padding to avoid overlapping with logo */}
+      <Box sx={{ textAlign: 'center', marginBottom: '20px', paddingLeft: '120px' }}>
+        <Typography variant="h4">PKU Tracker</Typography>
+      </Box>
       <div style={{ marginBottom: '20px' }}>
         <Select
           value={selectedDaughter}
@@ -90,10 +104,14 @@ const App = () => {
           onChange={(e) => setSelectedDate(e.target.value)}
         />
       </div>
-      <FoodSearch foods={foods} addLogEntry={addLogEntry} />
+      <FoodSearch foods={foods} setFoods={setFoods} addLogEntry={addLogEntry} />
       <SummaryMetrics logs={currentLogs} />
       <LogTable logs={currentLogs} foods={foods} />
-      <PheGoal pheGoal={pheGoal} setPheGoal={setPheGoal} totalPhe={currentLogs.reduce((sum, entry) => sum + entry.phe_mg, 0)} />
+      <PheGoal
+        pheGoal={pheGoal}
+        setPheGoal={setPheGoal}
+        totalPhe={currentLogs.reduce((sum, entry) => sum + entry.phe_mg, 0)}
+      />
     </Container>
   );
 };
