@@ -3,6 +3,7 @@ import Papa from 'papaparse';
 import { format } from 'date-fns';
 import { Select, MenuItem, TextField, Typography, Container, Box, Stack, Button } from '@mui/material';
 import FoodSearch from './FoodSearch';
+import FoodInput from './FoodInput';
 import LogTable from './LogTable';
 import SummaryMetrics from './SummaryMetrics';
 import PheGoal from './PheGoal';
@@ -12,13 +13,13 @@ const App = () => {
   const [logs, setLogs] = useState({});
   const [selectedDaughter, setSelectedDaughter] = useState('Scarlett');
   const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg (updated per previous request)
+  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg
+  const [selectedFood, setSelectedFood] = useState(null); // Track selected food
 
   useEffect(() => {
     document.title = 'PKU Tracker | Gamify Data';
-  }, []); // Empty dependency array ensures it runs only once on mount
+  }, []);
 
-  // Load foods from CSV on mount
   useEffect(() => {
     Papa.parse('/foods.csv', {
       download: true,
@@ -37,28 +38,36 @@ const App = () => {
     });
   }, []);
 
-  // Load logs and pheGoal from local storage
   useEffect(() => {
     const savedLogs = JSON.parse(localStorage.getItem('logs')) || {};
-    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100; // Updated default from 1000 to 100
+    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100;
     setLogs(savedLogs);
     setPheGoal(savedPheGoal);
   }, []);
 
-  // Save logs and pheGoal to local storage
   useEffect(() => {
     localStorage.setItem('logs', JSON.stringify(logs));
     localStorage.setItem('pheGoal', JSON.stringify(pheGoal));
   }, [logs, pheGoal]);
 
-  const addLogEntry = (food, quantity) => {
-    const phe_mg = food.phe_mg ? food.phe_mg : food.protein_g * 50; // Default Phe = protein * 50 mg/g
+  const addLogEntry = (food, multiplier, unit, value) => {
+    const numericValue = Number(value); // Convert to number
+    const phe_mg = food.phe_mg ? food.phe_mg : food.protein_g * 50;
+    let weight_g;
+    if (unit === 'grams') {
+      weight_g = numericValue;
+    } else if (unit === 'servings') {
+      weight_g = numericValue * food.weight_g;
+    } else if (unit === 'quantity') {
+      weight_g = numericValue * food.weight_g;
+    }
     const logEntry = {
       food_id: food.id,
-      quantity_servings: quantity,
-      protein_g: food.protein_g * quantity,
-      phe_mg: phe_mg * quantity,
-      calories_kcal: food.calories_kcal ? food.calories_kcal * quantity : null,
+      quantity_servings: multiplier,
+      weight_g: weight_g,
+      protein_g: food.protein_g * multiplier,
+      phe_mg: phe_mg * multiplier,
+      calories_kcal: food.calories_kcal ? food.calories_kcal * multiplier : null,
     };
     setLogs((prevLogs) => {
       const daughterLogs = prevLogs[selectedDaughter] || {};
@@ -71,11 +80,23 @@ const App = () => {
         },
       };
     });
+    setSelectedFood(null);
   };
 
-  const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
+  const handleDeleteLog = (log) => {
+    setLogs(prevLogs => {
+      if (!prevLogs[selectedDaughter]?.[selectedDate]) return prevLogs;
+      const daughterLogs = { ...prevLogs[selectedDaughter] };
+      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter(item => item !== log);
+      return {
+        ...prevLogs,
+        [selectedDaughter]: daughterLogs,
+      };
+    });
+  };
 
   const downloadLog = () => {
+    const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
     const csvData = currentLogs.map(log => {
       const food = foods.find(f => f.id === log.food_id);
       return {
@@ -97,29 +118,17 @@ const App = () => {
     link.click();
   };
 
-  const handleDeleteLog = (log) => {
-    setLogs(prevLogs => {
-      if (!prevLogs[selectedDaughter]?.[selectedDate]) return prevLogs; // Guard against undefined
-      const daughterLogs = { ...prevLogs[selectedDaughter] };
-      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter(item => item !== log);
-      return {
-        ...prevLogs,
-        [selectedDaughter]: daughterLogs,
-      };
-    });
-  };
+  const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
 
   return (
     <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
-      {/* Logo in top left corner, redirecting to gamifydata.com on current page */}
       <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
         <a href="https://gamifydata.com" rel="noopener noreferrer">
           <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
         </a>
       </Box>
-      {/* Centered title, with padding to avoid overlapping with logo */}
-      <Box sx={{ textAlign: 'center', marginBottom: '120px', paddingLeft: '120px' }}>
-        <Typography variant="h4">PKU Tracker</Typography>
+      <Box sx={{ textAlign: 'center', marginBottom: '40px', paddingLeft: '120px' }}>
+        <Typography variant="h4" color="primary">PKU Diet Tracker</Typography>
       </Box>
       <div style={{ marginBottom: '20px' }}>
         <Select
@@ -136,10 +145,11 @@ const App = () => {
           onChange={(e) => setSelectedDate(e.target.value)}
         />
       </div>
-      <FoodSearch foods={foods} setFoods={setFoods} addLogEntry={addLogEntry} />
+      <FoodSearch foods={foods} setFoods={setFoods} setSelectedFood={setSelectedFood} />
+      {selectedFood && <FoodInput selectedFood={selectedFood} addLogEntry={addLogEntry} />}
       <SummaryMetrics logs={currentLogs} />
       <LogTable logs={currentLogs} foods={foods} onDeleteLog={handleDeleteLog} />
-      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: '60px', paddingRight: '10px' }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: '40px', paddingRight: '10px' }}>
         <PheGoal
           pheGoal={pheGoal}
           setPheGoal={setPheGoal}

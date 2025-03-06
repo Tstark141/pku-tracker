@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Papa from 'papaparse';
 
 const LogTable = ({ logs, foods, onDeleteLog }) => {
   return (
@@ -12,10 +11,11 @@ const LogTable = ({ logs, foods, onDeleteLog }) => {
             <TableCell>Food</TableCell>
             <TableCell>Serving Size</TableCell>
             <TableCell>Quantity</TableCell>
+            <TableCell>Weight (g)</TableCell> {/* New column */}
             <TableCell>Protein (g)</TableCell>
             <TableCell>Phe (mg)</TableCell>
             <TableCell>Calories (kcal)</TableCell>
-            <TableCell>Action</TableCell> {/* New column for delete button */}
+            <TableCell>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -25,7 +25,8 @@ const LogTable = ({ logs, foods, onDeleteLog }) => {
               <TableRow key={index}>
                 <TableCell>{food.food_name}</TableCell>
                 <TableCell>{food.serving_size}</TableCell>
-                <TableCell>{log.quantity_servings}</TableCell>
+                <TableCell>{log.quantity_servings.toFixed(2)}</TableCell>
+                <TableCell>{log.weight_g !== undefined && !isNaN(log.weight_g) ? log.weight_g.toFixed(2) : '-'}</TableCell>
                 <TableCell>{log.protein_g.toFixed(1)}</TableCell>
                 <TableCell>{log.phe_mg.toFixed(0)}</TableCell>
                 <TableCell>{log.calories_kcal ? log.calories_kcal.toFixed(0) : '-'}</TableCell>
