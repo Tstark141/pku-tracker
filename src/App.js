@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import { format } from 'date-fns';
-import { Select, MenuItem, TextField, Typography, Container, Box, Stack, Button } from '@mui/material';
+import {
+  Select,
+  MenuItem,
+  TextField,
+  Typography,
+  Container,
+  Box,
+  Stack,
+  Button,
+  FormControl,
+  InputLabel,
+} from '@mui/material';
 import FoodSearch from './FoodSearch';
 import FoodInput from './FoodInput';
 import LogTable from './LogTable';
@@ -25,14 +36,16 @@ const App = () => {
       download: true,
       header: true,
       complete: (results) => {
-        setFoods(results.data.map(item => ({
-          ...item,
-          id: Number(item.id),
-          weight_g: Number(item.weight_g),
-          phe_mg: item.phe_mg ? Number(item.phe_mg) : null,
-          protein_g: Number(item.protein_g),
-          calories_kcal: item.calories_kcal ? Number(item.calories_kcal) : null,
-        })));
+        setFoods(
+          results.data.map((item) => ({
+            ...item,
+            id: Number(item.id),
+            weight_g: Number(item.weight_g),
+            phe_mg: item.phe_mg ? Number(item.phe_mg) : null,
+            protein_g: Number(item.protein_g),
+            calories_kcal: item.calories_kcal ? Number(item.calories_kcal) : null,
+          }))
+        );
       },
       error: (error) => console.error('Error parsing CSV:', error),
     });
@@ -84,10 +97,10 @@ const App = () => {
   };
 
   const handleDeleteLog = (log) => {
-    setLogs(prevLogs => {
+    setLogs((prevLogs) => {
       if (!prevLogs[selectedDaughter]?.[selectedDate]) return prevLogs;
       const daughterLogs = { ...prevLogs[selectedDaughter] };
-      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter(item => item !== log);
+      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter((item) => item !== log);
       return {
         ...prevLogs,
         [selectedDaughter]: daughterLogs,
@@ -97,8 +110,8 @@ const App = () => {
 
   const downloadLog = () => {
     const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
-    const csvData = currentLogs.map(log => {
-      const food = foods.find(f => f.id === log.food_id);
+    const csvData = currentLogs.map((log) => {
+      const food = foods.find((f) => f.id === log.food_id);
       return {
         food_name: food.food_name,
         serving_size: food.serving_size,
@@ -128,23 +141,34 @@ const App = () => {
         </a>
       </Box>
       <Box sx={{ textAlign: 'center', marginBottom: '40px', paddingLeft: '120px' }}>
-        <Typography variant="h4" color="primary">PKU Diet Tracker</Typography>
+        <Typography variant="h4" color="primary">
+          PKU Tracker
+        </Typography>
       </Box>
-      <div style={{ marginBottom: '20px' }}>
-        <Select
-          value={selectedDaughter}
-          onChange={(e) => setSelectedDaughter(e.target.value)}
-          style={{ marginRight: '20px' }}
-        >
-          <MenuItem value="Scarlett">Scarlett</MenuItem>
-          <MenuItem value="Holland">Holland</MenuItem>
-        </Select>
+      <Box sx={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
+        <FormControl sx={{ minWidth: 120 }}>
+          <InputLabel id="person-select-label">Person</InputLabel>
+          <Select
+            labelId="person-select-label"
+            value={selectedDaughter}
+            onChange={(e) => setSelectedDaughter(e.target.value)}
+            variant="outlined"
+          >
+            <MenuItem value="Scarlett">Scarlett</MenuItem>
+            <MenuItem value="Holland">Holland</MenuItem>
+          </Select>
+        </FormControl>
         <TextField
+          label="Date"
           type="date"
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
         />
-      </div>
+      </Box>
       <FoodSearch foods={foods} setFoods={setFoods} setSelectedFood={setSelectedFood} />
       {selectedFood && <FoodInput selectedFood={selectedFood} addLogEntry={addLogEntry} />}
       <SummaryMetrics logs={currentLogs} />
