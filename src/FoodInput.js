@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Select, MenuItem, Button, Box } from '@mui/material';
 
-const FoodInput = ({ selectedFood, addLogEntry }) => {
-  const [unit, setUnit] = useState('grams'); // Default to grams
-  const [value, setValue] = useState('');
+const FoodInput = ({ selectedFood, addLogEntry, initialQuantity = '', initialUnit = 'grams' }) => {
+  const [unit, setUnit] = useState(initialUnit);
+  const [value, setValue] = useState(initialQuantity);
+
+  // Update unit and value when initialUnit or initialQuantity changes
+  useEffect(() => {
+    if (initialUnit) {
+      setUnit(initialUnit);
+    }
+    if (initialQuantity) {
+      setValue(initialQuantity);
+    }
+  }, [initialUnit, initialQuantity]);
 
   const handleAdd = () => {
     if (selectedFood && value) {
