@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Papa from 'papaparse';
 import {
   Autocomplete,
   TextField,
@@ -15,11 +14,13 @@ import {
   FormControl,
   InputLabel,
   Stack,
+  CircularProgress,
 } from '@mui/material';
-import Navigation from './Navigation';
+import Header from './components/Header';
+import { useAppContext } from './context/AppContext';
 
 const PheLookupPage = () => {
-  const [foods, setFoods] = useState([]);
+  const { foods, isLoading } = useAppContext();
   const [selectedFood, setSelectedFood] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [unit, setUnit] = useState('servings');
@@ -27,26 +28,6 @@ const PheLookupPage = () => {
 
   useEffect(() => {
     document.title = 'PKU Tracker | Phe Lookup';
-  }, []);
-
-  useEffect(() => {
-    Papa.parse('/foods.csv', {
-      download: true,
-      header: true,
-      complete: (results) => {
-        setFoods(
-          results.data.map((item) => ({
-            ...item,
-            id: Number(item.id),
-            weight_g: Number(item.weight_g),
-            phe_mg: item.phe_mg ? Number(item.phe_mg) : null,
-            protein_g: Number(item.protein_g),
-            calories_kcal: item.calories_kcal ? Number(item.calories_kcal) : null,
-          }))
-        );
-      },
-      error: (error) => console.error('Error parsing CSV:', error),
-    });
   }, []);
 
   const calculateResults = () => {
@@ -83,20 +64,17 @@ const PheLookupPage = () => {
     });
   };
 
+  if (isLoading) {
+    return (
+      <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <CircularProgress />
+      </Container>
+    );
+  }
+
   return (
     <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
-      <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
-        <a href="https://gamifydata.com" rel="noopener noreferrer">
-          <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
-        </a>
-      </Box>
-      <Box sx={{ textAlign: 'center', marginBottom: '20px', paddingLeft: '120px' }}>
-        <Typography variant="h4" color="primary">
-          PKU Tracker
-        </Typography>
-      </Box>
-      
-      <Navigation />
+      <Header />
 
       <Box sx={{ marginBottom: '30px' }}>
         <Typography variant="h6" gutterBottom>

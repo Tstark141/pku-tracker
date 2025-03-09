@@ -13,23 +13,33 @@ import {
   Button,
   FormControl,
   InputLabel,
+  CircularProgress,
 } from '@mui/material';
 import FoodSearch from './FoodSearch';
 import FoodInput from './FoodInput';
 import LogTable from './LogTable';
 import SummaryMetrics from './SummaryMetrics';
 import PheGoal from './PheGoal';
-import Navigation from './Navigation';
+import Header from './components/Header';
+import { useAppContext } from './context/AppContext';
 
 const FoodTrackerPage = () => {
-  const [foods, setFoods] = useState([]);
-  const [logs, setLogs] = useState({});
+  const { 
+    foods, 
+    logs, 
+    pheGoal, 
+    isLoading, 
+    setPheGoal, 
+    addLogEntry: contextAddLogEntry, 
+    deleteLogEntry: contextDeleteLogEntry 
+  } = useAppContext();
+  
   const [selectedDaughter, setSelectedDaughter] = useState('Scarlett');
   const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [pheGoal, setPheGoal] = useState(100); // Default 100 mg
-  const [selectedFood, setSelectedFood] = useState(null); // Track selected food
+  const [selectedFood, setSelectedFood] = useState(null);
   const [initialQuantity, setInitialQuantity] = useState('');
   const [initialUnit, setInitialUnit] = useState('grams');
+  
   const location = useLocation();
   const navigate = useNavigate();
   const initialLoadRef = useRef(true);
@@ -37,38 +47,6 @@ const FoodTrackerPage = () => {
   useEffect(() => {
     document.title = 'PKU Tracker | Food Tracker';
   }, []);
-
-  useEffect(() => {
-    Papa.parse('/foods.csv', {
-      download: true,
-      header: true,
-      complete: (results) => {
-        setFoods(
-          results.data.map((item) => ({
-            ...item,
-            id: Number(item.id),
-            weight_g: Number(item.weight_g),
-            phe_mg: item.phe_mg ? Number(item.phe_mg) : null,
-            protein_g: Number(item.protein_g),
-            calories_kcal: item.calories_kcal ? Number(item.calories_kcal) : null,
-          }))
-        );
-      },
-      error: (error) => console.error('Error parsing CSV:', error),
-    });
-  }, []);
-
-  useEffect(() => {
-    const savedLogs = JSON.parse(localStorage.getItem('logs')) || {};
-    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100;
-    setLogs(savedLogs);
-    setPheGoal(savedPheGoal);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('logs', JSON.stringify(logs));
-    localStorage.setItem('pheGoal', JSON.stringify(pheGoal));
-  }, [logs, pheGoal]);
 
   // Handle food and quantity passed from PheLookupPage
   useEffect(() => {
@@ -89,50 +67,14 @@ const FoodTrackerPage = () => {
     }
   }, [location.state]);
 
-  const addLogEntry = (food, multiplier, unit, value) => {
-    const numericValue = Number(value); // Convert to number
-    const phe_mg = food.phe_mg ? food.phe_mg : food.protein_g * 50;
-    let weight_g;
-    if (unit === 'grams') {
-      weight_g = numericValue;
-    } else if (unit === 'servings') {
-      weight_g = numericValue * food.weight_g;
-    } else if (unit === 'quantity') {
-      weight_g = numericValue * food.weight_g;
-    }
-    const logEntry = {
-      food_id: food.id,
-      quantity_servings: multiplier,
-      weight_g: weight_g,
-      protein_g: food.protein_g * multiplier,
-      phe_mg: phe_mg * multiplier,
-      calories_kcal: food.calories_kcal ? food.calories_kcal * multiplier : null,
-    };
-    setLogs((prevLogs) => {
-      const daughterLogs = prevLogs[selectedDaughter] || {};
-      const dateLogs = daughterLogs[selectedDate] || [];
-      return {
-        ...prevLogs,
-        [selectedDaughter]: {
-          ...daughterLogs,
-          [selectedDate]: [...dateLogs, logEntry],
-        },
-      };
-    });
+  const handleAddLogEntry = (food, multiplier, unit, value) => {
+    contextAddLogEntry(selectedDaughter, selectedDate, food, multiplier, unit, value);
     setSelectedFood(null);
     setInitialQuantity('');
   };
 
   const handleDeleteLog = (log) => {
-    setLogs((prevLogs) => {
-      if (!prevLogs[selectedDaughter]?.[selectedDate]) return prevLogs;
-      const daughterLogs = { ...prevLogs[selectedDaughter] };
-      daughterLogs[selectedDate] = daughterLogs[selectedDate].filter((item) => item !== log);
-      return {
-        ...prevLogs,
-        [selectedDaughter]: daughterLogs,
-      };
-    });
+    contextDeleteLogEntry(selectedDaughter, selectedDate, log);
   };
 
   const downloadLog = () => {
@@ -160,20 +102,17 @@ const FoodTrackerPage = () => {
 
   const currentLogs = logs[selectedDaughter]?.[selectedDate] || [];
 
+  if (isLoading) {
+    return (
+      <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <CircularProgress />
+      </Container>
+    );
+  }
+
   return (
     <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
-      <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
-        <a href="https://gamifydata.com" rel="noopener noreferrer">
-          <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
-        </a>
-      </Box>
-      <Box sx={{ textAlign: 'center', marginBottom: '20px', paddingLeft: '120px' }}>
-        <Typography variant="h4" color="primary">
-          PKU Tracker
-        </Typography>
-      </Box>
-      
-      <Navigation />
+      <Header />
       
       <Box sx={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
         <FormControl sx={{ minWidth: 120 }}>
@@ -199,11 +138,11 @@ const FoodTrackerPage = () => {
           variant="outlined"
         />
       </Box>
-      <FoodSearch foods={foods} setFoods={setFoods} setSelectedFood={setSelectedFood} />
+      <FoodSearch foods={foods} setSelectedFood={setSelectedFood} />
       {selectedFood && (
         <FoodInput 
           selectedFood={selectedFood} 
-          addLogEntry={addLogEntry} 
+          addLogEntry={handleAddLogEntry} 
           initialQuantity={initialQuantity}
           initialUnit={initialUnit}
         />

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Autocomplete, TextField, Box, Button } from '@mui/material';
+import { useAppContext } from './context/AppContext';
 
-const FoodSearch = ({ foods, setFoods, setSelectedFood }) => {
+const FoodSearch = ({ setSelectedFood }) => {
+  const { foods } = useAppContext();
   const [showCustomForm, setShowCustomForm] = useState(false);
   const [customFood, setCustomFood] = useState({ name: '', serving_size: '', protein_g: '', calories_kcal: '' });
 
@@ -21,7 +23,9 @@ const FoodSearch = ({ foods, setFoods, setSelectedFood }) => {
         calories_kcal: customFood.calories_kcal ? Number(customFood.calories_kcal) : null,
         phe_mg: null,
       };
-      setFoods(prev => [...prev, newFood]);
+      
+      // We'll use the selected food directly without modifying the global foods list
+      // This is a temporary food just for this session
       setSelectedFood(newFood);
       setShowCustomForm(false);
       setCustomFood({ name: '', serving_size: '', protein_g: '', calories_kcal: '' });

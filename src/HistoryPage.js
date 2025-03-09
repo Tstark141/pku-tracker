@@ -6,7 +6,8 @@ import {
   FormControl, 
   InputLabel, 
   Select, 
-  MenuItem 
+  MenuItem,
+  CircularProgress
 } from '@mui/material';
 import { 
   LineChart, 
@@ -19,27 +20,24 @@ import {
   ResponsiveContainer, 
   ReferenceLine 
 } from 'recharts';
-import { format, subDays, subWeeks, subMonths, parseISO, isAfter } from 'date-fns';
-import Navigation from './Navigation';
+import { format, subWeeks, subMonths, parseISO, isAfter } from 'date-fns';
+import Header from './components/Header';
+import { useAppContext } from './context/AppContext';
 
 const HistoryPage = () => {
+  const { logs, pheGoal, isLoading } = useAppContext();
   const [selectedDaughter, setSelectedDaughter] = useState('Scarlett');
   const [timeFrame, setTimeFrame] = useState('1week');
   const [chartData, setChartData] = useState([]);
-  const [pheGoal, setPheGoal] = useState(100);
 
   useEffect(() => {
     document.title = 'PKU Tracker | History';
   }, []);
 
   useEffect(() => {
-    // Load phe goal from localStorage
-    const savedPheGoal = JSON.parse(localStorage.getItem('pheGoal')) || 100;
-    setPheGoal(savedPheGoal);
-
-    // Load logs from localStorage
-    const savedLogs = JSON.parse(localStorage.getItem('logs')) || {};
-    const daughterLogs = savedLogs[selectedDaughter] || {};
+    if (isLoading) return;
+    
+    const daughterLogs = logs[selectedDaughter] || {};
 
     // Calculate start date based on selected time frame
     const today = new Date();
@@ -84,7 +82,7 @@ const HistoryPage = () => {
         date: dateStr,
         displayDate: format(parseISO(dateStr), 'MM/dd'),
         phe: dateMap[dateStr],
-        goal: savedPheGoal
+        goal: pheGoal
       });
     }
     
@@ -96,22 +94,19 @@ const HistoryPage = () => {
     });
     
     setChartData(data);
-  }, [selectedDaughter, timeFrame]);
+  }, [selectedDaughter, timeFrame, logs, pheGoal, isLoading]);
+
+  if (isLoading) {
+    return (
+      <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <CircularProgress />
+      </Container>
+    );
+  }
 
   return (
     <Container maxWidth="md" sx={{ paddingTop: '20px' }}>
-      <Box sx={{ position: 'absolute', top: '20px', left: '20px' }}>
-        <a href="https://gamifydata.com" rel="noopener noreferrer">
-          <img src="/Gamify_Logo.png" alt="Gamify Data Logo" style={{ width: '100px', height: 'auto' }} />
-        </a>
-      </Box>
-      <Box sx={{ textAlign: 'center', marginBottom: '20px', paddingLeft: '120px' }}>
-        <Typography variant="h4" color="primary">
-          PKU Tracker
-        </Typography>
-      </Box>
-      
-      <Navigation />
+      <Header />
       
       <Box sx={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
         <FormControl sx={{ minWidth: 120 }}>
@@ -143,7 +138,7 @@ const HistoryPage = () => {
       </Box>
       
       <Box sx={{ height: '400px', marginTop: '30px' }}>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom align="center">
           Daily Phe Intake vs Goal
         </Typography>
         {chartData.length > 0 ? (
